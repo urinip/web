@@ -66,7 +66,7 @@ export default {
   },
 
   router: {
-    base: '/my-nuxt-project/'
+    base: '/web/'
   },
 
   generate: {
