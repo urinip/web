@@ -120,7 +120,7 @@ export default class extends Vue {
   public isFileLoaded = false
   public boardSells: Quote[][] = []
   public boardBuys: Quote[][] = []
-  public ticks: object[] = []
+  public ticks: any[] = []
 
   public maxTimeSeries: number = 0
   public currentTimeSeries: number = 0
@@ -197,7 +197,11 @@ export default class extends Vue {
         })
         .filter((x) => x)
         .filter((x) => {
-          return x.volume !== 0
+          if (x === null) {
+            return false
+          } else {
+            return x.volume !== 0
+          }
         })
         .reverse()
 
